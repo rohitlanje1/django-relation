@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+
+    {% block title %}
+    <title>SHOW COURSE</title>
+    {% endblock %}
+
+
+{% block content %}
+
+<table class="table table-info text-center">
+  <thead>
+    <tr>
+      <th scope="col">COURSE</th>
+      <th scope="col">STUDENT ID</th>
+      <th scope="col">STUDENT NAME</th>
+      <th scope="col">STUDENT DATE OF BIRTH</th>
+      <th scope="col">STUDENT ADDRESS</th>
+      <th scope="col">STUDENT CONTACT</th>
+      <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{i.course}}</th>
+      <td>{{i.sid}}</td>
+      <td>{{i.sname}}</td>
+      <td>{{i.dob}}</td>
+      <td>{{i.add}}</td>
+      <td>{{i.contact}}</td>
+      <td>
+          <a href="{% url 'update_stud_url' i.sid %}"><button>EDIT</button></a><a href="{% url 'delete_stud_url' i.sid %}"><button>DELETE</button></a>
+      </td>
+    </tr>
+{% endfor %}
+     </tbody>
+</table>
+
+
+
+
+
+{% endblock %}
+
+

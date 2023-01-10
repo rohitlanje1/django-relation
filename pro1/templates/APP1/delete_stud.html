@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+    {% block title %}
+    <title>DELETE COURSE</title>
+    {% endblock %}
+
+
+{% block content %}
+<form method="post" class="container jumbotron">
+    {% csrf_token %}
+    <h2>Do you want to delete <span style="color:red;">Course:{{data.sname}} ?</span></h2>
+    <hr>
+    <input type="submit" value="DELETE" class="btn btn-danger col-6" >
+    <a href="{% url 'show_stud_url' %}"><input type="button" value="NO back to Show" class="btn btn-info col-6"></a>
+</form>
+
+{% endblock %}
+
+

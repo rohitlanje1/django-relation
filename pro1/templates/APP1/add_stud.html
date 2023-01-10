@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+
+    {% block title %}
+    <title>ADD STUDENT</title>
+    {% endblock %}
+
+
+
+
+
+{% block content %}
+<form method="post" class="container jumbotron col col-10">
+    {% csrf_token %}
+
+    {{form|crispy}}
+    <input type="submit" value="SUBMIT" class="btn btn-success col-6">
+    <input type="reset" value="RESET" class="btn btn-warning col-6 float-right" >
+</form>
+{% endblock %}
+
+
+

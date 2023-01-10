@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+
+    {% block title %}
+    <title>SHOW COURSE</title>
+    {% endblock %}
+
+
+{% block content %}
+
+<table class="table table-dark text-center">
+  <thead>
+    <tr>
+      <th scope="col">COURSE ID</th>
+      <th scope="col">COURSE NAME</th>
+      <th scope="col">COURSE FEES</th>
+      <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{i.cid}}</th>
+      <td>{{i.cname}}</td>
+      <td>{{i.fees}}</td>
+      <td>
+          <a href="{% url 'update_course_url' i.cid %}"><button>EDIT</button></a><a href="{% url 'delete_course_url' i.cid %}"><button>DELETE</button></a>
+      </td>
+    </tr>
+{% endfor %}
+     </tbody>
+</table>
+
+
+
+
+
+{% endblock %}
+
+
